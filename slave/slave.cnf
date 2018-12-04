@@ -1,0 +1,14 @@
+[mysqld]
+# character setting
+character-set-server=utf8mb4
+collation-server=utf8mb4_bin
+
+# replication setting
+log-bin=/var/log/mysql/bin-log
+server-id=2
+read_only=1
+
+# query log setting
+general_log=1
+slow_query_log=1
+log_output=TABLE

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql-master:
+    container_name: mysql-master
+    build: ./master
+    ports:
+      - "3306:3306"
+  mysql-slave:
+    container_name: mysql-slave
+    build: ./slave
+    ports:
+      - "3307:3306"
+    depends_on:
+      - "mysql-master"
